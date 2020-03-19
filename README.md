@@ -31,4 +31,4 @@ Enquete finished
 
 Continue where you left off screen
 
-<img src="./github/images/screen-6.png">
+<img src="./github/images/screen-6.png"

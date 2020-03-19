@@ -1,0 +1,33 @@
+<%- include(`${basePartialsPath}/head`) %>
+<%- include(`${basePartialsPath}/header`) %>
+
+<main>
+  <section>
+    <h1>Gebruikers gegevens</h1>
+
+    <form action="/survey" method="POST">
+      <fieldset>
+        <label>
+          <span>Voor en achternaam</span>
+          <input type="text" name="name" placeholder="Bijvoorbeeld: Damian Veltkamp" required>
+        </label>
+        <label>
+          <span>Studentnummer bestaande uit 9 getallen</span>
+          <input type="text" name="studentnumber" inputmode="numeric" pattern="[0-9]{9,9}" placeholder="Bijvoorbeeld: 500773874" required>
+        </label>
+      </fieldset>
+      <fieldset>
+        <p>Wanneer je besluit om de enquete op een ander moment af te maken heb je de volgende code nodig. Schrijf deze dus eerst even op. De code is niet case sensitive.</p>
+        <strong><%= uniquecode %></strong>
+      </fieldset>
+      <fieldset>
+        <input type="hidden" name="generatedcode" value="<%= uniquecode %>">
+        <input type="submit" value="Enquete beginnen">
+      </fieldset>
+    </form>
+
+  </section>
+</main>
+
+<%- include(`${basePartialsPath}/footer`) %>
+<%- include(`${basePartialsPath}/foot`) %>

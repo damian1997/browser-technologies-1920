@@ -1,0 +1,27 @@
+<%- include(`${basePartialsPath}/head`) %>
+<%- include(`${basePartialsPath}/header`) %>
+
+<main>
+  <section>
+    <% if(errormsg !== undefined) { %>
+      <%= errormsg %>
+    <% } %>
+
+    <h1>Verder gaan met waar je was gebleven?</h1>
+    <p>Vul je unieke code in om verder te gaan met de enquete</p>
+
+    <form action="/survey" method="POST">
+      <fieldset>
+        <label>
+          <span>Unieke code</span>
+          <input type="text" name="uniquecode" placeholder="Bijvoorbeeld: 4X8ET">
+        </label>
+        <input type="submit" value="Enquete beginnen">
+      </fieldset>
+    </form>
+
+  </section>
+</main>
+
+<%- include(`${basePartialsPath}/footer`) %>
+<%- include(`${basePartialsPath}/foot`) %>

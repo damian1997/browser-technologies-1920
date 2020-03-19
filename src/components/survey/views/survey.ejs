@@ -1,0 +1,16 @@
+<%- include(`${basePartialsPath}/head`) %>
+<%- include(`${basePartialsPath}/header`) %>
+
+<main>
+  <h2>Welkom <%= participant %></h2>
+  <% if(page === 1) { %>
+    <%- include('partials/question1') %>
+  <% } %>
+  <% if(page === 2) { %>
+    <%- include('partials/question2') %>
+  <% } %>
+
+</main>
+
+<%- include(`${basePartialsPath}/footer`) %>
+<%- include(`${basePartialsPath}/foot`) %>
