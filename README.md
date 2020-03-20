@@ -1,5 +1,6 @@
 # Browser Technologies @cmda-minor-web 1920
 Repository for the browser technologies course.
+[DEMO](https://sleepy-anchorage-02272.herokuapp.com/)
 
 ## Table of contents
 * [Feedback](ik-wil-feedback-op)
