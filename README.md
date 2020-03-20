@@ -15,7 +15,7 @@ Repository for the browser technologies course.
 
 ## Wireframes
 
-Start screen
+### Start screen
 
 <details>
   <summary>Show output</summary>
@@ -23,7 +23,7 @@ Start screen
   <img src="./github/images/screen-1.png">
 </details>
 
-Userinformation screen
+### Userinformation screen
 
 <details>
   <summary>Show wireframe</summary>
@@ -31,7 +31,7 @@ Userinformation screen
   <img src="./github/images/screen-2.png">
 </details>
 
-Enquete form step 1
+### Enquete form step 1
 
 <details>
   <summary>Show wireframe</summary>
@@ -39,7 +39,7 @@ Enquete form step 1
   <img src="./github/images/screen-3.png">
 </details>
 
-Enquete form step 2
+### Enquete form step 2
 
 <details>
   <summary>Show wireframe</summary>
@@ -47,7 +47,7 @@ Enquete form step 2
   <img src="./github/images/screen-4.png">
 </details>
 
-Enquete finished
+### Enquete finished
 
 <details>
   <summary>Show wireframe</summary>
@@ -55,7 +55,7 @@ Enquete finished
   <img src="./github/images/screen-5.png">
 </details>
 
-Continue where you left off screen
+### Continue where you left off screen
 
 <details>
   <summary>Show wireframe</summary>
