@@ -1,6 +1,6 @@
 import express from 'express'
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
 
 import fs from 'fs'
 import url from 'url'
@@ -31,14 +31,17 @@ app.post('/survey', urlencodedParser, (req, res) => {
   // New survey has been initialized
   if(req.body.initialsetup) {
     const POSTDATA = JSON.stringify([req.body], null, 2)
-    
-    writeParticipantData(req.body.identifier, POSTDATA)
+
+    if(!req.body.surveycontinue) {
+      writeParticipantData(req.body.identifier, POSTDATA)
+    } 
 
     res.render(`${__dirname}/src/components/survey/views/survey`, {
       title: 'Survey',
       identifier: req.body.identifier,
       participant: req.body.name,
       page: 1,
+      data: '',
       basePartialsPath: `${__dirname}/src/components/base/views/partials`
     })
 
@@ -48,15 +51,27 @@ app.post('/survey', urlencodedParser, (req, res) => {
     if(PARTICIPANTFILENAMES.includes(`${req.body.identifier}.json`)) {
       const PARTICIPANTDATA = getParticipantData(req.body.identifier)
 
-      PARTICIPANTDATA.push(req.body)
-      writeParticipantData(req.body.identifier, JSON.stringify(PARTICIPANTDATA, null, 2))
+      const PAGESWITHEMPTYVALUES = []
+      PARTICIPANTDATA.forEach(entry => {
+        for(let key in entry) {
+          if(entry[key] === '') {
+            PAGESWITHEMPTYVALUES.push(entry)
+          }
+        }
+      })
+    
+      if(req.body.surveycontinue !== 'true') {
+        PARTICIPANTDATA.push(req.body)
+        writeParticipantData(req.body.identifier, JSON.stringify(PARTICIPANTDATA, null, 2))
+      }
 
       // TODO fetch page number from json file and let person continue where he left off
       res.render(`${__dirname}/src/components/survey/views/survey`, {
         title: 'Survey',
         participant: PARTICIPANTDATA.name,
         identifier: req.body.identifier,
-        page: (req.body.page !== undefined) ? parseInt(req.body.page) + 1 : 1,
+        page: (PAGESWITHEMPTYVALUES.length) ? parseInt(PAGESWITHEMPTYVALUES[0].page) : (req.body.page !== undefined) ? parseInt(req.body.page) + 1 : parseInt(PARTICIPANTDATA[(PARTICIPANTDATA.length - 1)].page) + 1,
+        data: (PAGESWITHEMPTYVALUES.length) ? PAGESWITHEMPTYVALUES[0]: '',
         basePartialsPath: `${__dirname}/src/components/base/views/partials`
       })
     } else {
@@ -99,6 +114,7 @@ function getParticipantData(identifier) {
 }
 
 function writeParticipantData(identifier, data) {
+  console.log(`EEEEY KUT ${data}`)
   try {
     fs.writeFileSync(`data/participants/${identifier}.json`, data)
   } catch(error) {

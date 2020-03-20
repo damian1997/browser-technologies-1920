@@ -4,17 +4,36 @@
     <fieldset>
       <legend>Wat vind je van de begeleiding tijdens progressive web apps</legend>
       <label>
+
         <span>Slecht</span>
-        <input type="radio" name="support" value="slecht" required>
+        <% if(data.support === "slecht") { %>
+          <input type="radio" name="support" value="slecht" checked required>
+        <% } else if(data.support !== "slecht") { %>
+          <input type="radio" name="support" value="slecht" required>
+        <% } %>
+
       </label>
       <label>
+
         <span>Middelmatig</span>
-        <input type="radio" name="support" value="middelmatig" required>
+        <% if(data.support === "middelmatig") { %>
+          <input type="radio" name="support" value="middelmatig" checked required>
+        <% } else if(data.support !== "middelmatig") { %>
+          <input type="radio" name="support" value="middelmatig" required>
+        <% } %>
+
       </label>
       <label>
+
         <span>Goed</span>
-        <input type="radio" name="support" value="goed" required>
+        <% if(data.support === "goed") { %>
+          <input type="radio" name="support" value="goed" checked required>
+        <% } else if(data.support !== "goed") { %>
+          <input type="radio" name="support" value="goed" required>
+        <% } %>
+
       </label>
+
     </fieldset>
     <fieldset>
       <legend>Wat vind je van het tempo tijdens progressive web apps</legend>

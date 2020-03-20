@@ -2,48 +2,96 @@
   <h1>Browser technologies</h1>
   <form action="/survey" method="POST">
     <fieldset>
+
       <legend>Wat vind je van de begeleiding tijdens browser technologies</legend>
       <label>
+
         <span>Slecht</span>
-        <input type="radio" name="support" value="slecht" required>
+        <% if(data.support === "slecht") { %>
+          <input type="radio" name="support" value="slecht" checked required>
+        <% } else if(data.support !== "slecht") { %>
+          <input type="radio" name="support" value="slecht" required>
+        <% } %>
+
       </label>
       <label>
+
         <span>Middelmatig</span>
-        <input type="radio" name="support" value="middelmatig" required>
+        <% if(data.support === "middelmatig") { %>
+          <input type="radio" name="support" value="middelmatig" checked required>
+        <% } else if(data.support !== "middelmatig") { %>
+          <input type="radio" name="support" value="middelmatig" required>
+        <% } %>
+
       </label>
       <label>
+
         <span>Goed</span>
-        <input type="radio" name="support" value="goed" required>
+        <% if(data.support === "goed") { %>
+          <input type="radio" name="support" value="goed" checked required>
+        <% } else if(data.support !== "goed") { %>
+          <input type="radio" name="support" value="goed" required>
+        <% } %>
+
       </label>
+
     </fieldset>
     <fieldset>
+
       <legend>Wat vind je van het tempo tijdens browser technologies</legend>
       <label>
         <span>Te sloom</span>
-        <input type="radio" name="course-pace" value="te sloom" required>
+        <% if(data["course-pace"]=== "te sloom") { %>
+          <input type="radio" name="course-pace" value="te sloom" checked required>
+        <% } else if(data["course-pace"] !== "te sloom") { %>
+          <input type="radio" name="course-pace" value="te sloom" required>
+        <% } %>
       </label>
+
       <label>
         <span>Goed te volgen</span>
-        <input type="radio" name="course-pace" value="goed te volgen" required>
+        <% if(data["course-pace"]=== "goed te volgen") { %>
+          <input type="radio" name="course-pace" value="goed te volgen" checked required>
+        <% } else if(data["course-pace"] !== "goed te volgen") { %>
+          <input type="radio" name="course-pace" value="goed te volgen" required>
+        <% } %>
       </label>
+
       <label>
         <span>Te snel</span>
-        <input type="radio" name="course-pace" value="te snel" required>
+        <% if(data["course-pace"]=== "te snel") { %>
+          <input type="radio" name="course-pace" value="te snel" checked required>
+        <% } else if(data["course-pace"] !== "goed te volgen") { %>
+          <input type="radio" name="course-pace" value="te snel" required>
+        <% } %>
       </label>
+
     </fieldset>
     <fieldset>
+
       <legend>Welk cijfer geef je aan de browser technologies course?</legend>
       <label>
         <span>Rating van 1 tot 10</span>
-        <input type="range" id="vol" name="rating" min="0" max="10">
+        <% if(data.rating) { %>
+          <input type="range" name="rating" value="<%= data.rating %>" min="0" max="10">
+        <% } else if(data["course-pace"] !== "goed te volgen") { %>
+          <input type="range" id="vol" name="rating" min="0" max="10">
+        <% } %>
       </label>
+
     </fieldset>
     <fieldset>
+
       <legend>Wat vond je van de course?</legend>
       <label>
         <span>Maximaal aantal characters 150</span>
-        <input type="textarea" name="message" placeholder="Max aantal characters: 150" maxlength="150" required>
+        <% if(data.message) { %>
+          <input type="textarea" name="message" placeholder="Max aantal characters: 150" maxlength="150" value="<%= data.message %>" required>
+        <% } else if(data["course-pace"] !== "goed te volgen") { %>
+          <input type="textarea" name="message" placeholder="Max aantal characters: 150" maxlength="150">
+        <% } %>
       </label>
+
     </fieldset>
     <fieldset>
       <input type="hidden" name="identifier" value="<%= identifier %>">
