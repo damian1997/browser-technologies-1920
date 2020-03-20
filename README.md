@@ -12,8 +12,11 @@ Repository for the browser technologies course.
 * De loop van de applicatie, werkt het op een duidelijke manier?
 
 ## Description
-**Case**
+**Case:**
 "Ik wil een enquete kunnen invullen over de minor Web Development, met verschillende antwoord mogelijkheden. Als ik de enquete niet afkrijg, wil ik later weer verder gaan met waar ik ben gebleven."
+
+**Werking van de applicatie:**
+Wanneer de gebruiker aankomt op de site krijgt hij de mogelijkheid om een nieuwe enquete te starten of door te gaan met een enquete die hij/zij eerder gestart is. Wanneer de gebruiker kiest om een nieuwe enquete te starten krijgt de gebruiker een unieke code waarmee hij zichzelf kan identificeren zodat als hij de enquete op een ander moment af wilt maken hij dit kan doen doormiddel van de unieke code.
 
 ## Wireframes
 
