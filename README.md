@@ -5,6 +5,8 @@ Repository for the browser technologies course.
 * [Feedback](ik-wil-feedback-op)
 * [Description](description)
 * [Wireframes](wireframes)
+* [Prerequisites](prerequisites)
+* [Installing](installing)
 
 ## Ik wil feedback op
 * HTML semantiek voor mn formulieren
@@ -67,3 +69,23 @@ Wanneer de gebruiker aankomt op de site krijgt hij de mogelijkheid om een nieuwe
 
   <img src="./github/images/screen-6.png"
 </details>
+
+## Prerequisites
+* Nodejs
+* Npm
+
+## Installing
+Clone repository into local directory
+```
+git clone https://github.com/damian1997/browser-technologies-1920.git
+```
+
+Install packages
+```
+npm install
+```
+
+Run local server
+```
+npm run dev
+```
