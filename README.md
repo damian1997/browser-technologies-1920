@@ -18,7 +18,7 @@ Repository for the browser technologies course.
 ### Start screen
 
 <details>
-  <summary>Show output</summary>
+  <summary>Show wireframe</summary>
 
   <img src="./github/images/screen-1.png">
 </details>
