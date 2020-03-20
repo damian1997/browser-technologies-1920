@@ -27,40 +27,41 @@ app.get('/new-survey', (req, res) => {
 })
 
 app.post('/survey', urlencodedParser, (req, res) => {
-  // Check if user came from survey continue page.
-  if(req.body.uniquecode) {
 
-    // Get all participant file names
-    const PARTICIPANTFILENAMES = fs.readdirSync('data/participants/')
+  // New survey has been initialized
+  if(req.body.initialsetup) {
+    const POSTDATA = JSON.stringify([req.body], null, 2)
     
-    // Check if filled in unique code is a correct participant
-    if(PARTICIPANTFILENAMES.includes(`${req.body.uniquecode}.json`)) {
-      const READDATA = JSON.parse(fs.readFileSync(`data/participants/${req.body.uniquecode}.json`))
+    writeParticipantData(req.body.identifier, POSTDATA)
+
+    res.render(`${__dirname}/src/components/survey/views/survey`, {
+      title: 'Survey',
+      identifier: req.body.identifier,
+      participant: req.body.name,
+      page: 1,
+      basePartialsPath: `${__dirname}/src/components/base/views/partials`
+    })
+
+  } else {
+    const PARTICIPANTFILENAMES = fs.readdirSync('data/participants/')
+
+    if(PARTICIPANTFILENAMES.includes(`${req.body.identifier}.json`)) {
+      const PARTICIPANTDATA = getParticipantData(req.body.identifier)
+
+      PARTICIPANTDATA.push(req.body)
+      writeParticipantData(req.body.identifier, JSON.stringify(PARTICIPANTDATA, null, 2))
 
       // TODO fetch page number from json file and let person continue where he left off
       res.render(`${__dirname}/src/components/survey/views/survey`, {
         title: 'Survey',
-        participant: READDATA.name,
-        page: 1,
+        participant: PARTICIPANTDATA.name,
+        identifier: req.body.identifier,
+        page: (req.body.page !== undefined) ? parseInt(req.body.page) + 1 : 1,
         basePartialsPath: `${__dirname}/src/components/base/views/partials`
       })
     } else {
       res.redirect(`/continue-survey?error=participant+not+found`)
     }
-
-  } else {
-
-    const DATA = JSON.stringify(req.body,null,2)
-
-    fs.writeFileSync(`data/participants/${req.body.generatedcode}.json`, DATA)
-    console.log((req.body.topage !== undefined) ? req.body.topage : 1)
-    // TODO fix page incrementation for questions partial
-    res.render(`${__dirname}/src/components/survey/views/survey`, {
-      title: 'Survey',
-      participant: req.body.name,
-      page: (req.body.topage !== undefined) ? parseInt(req.body.topage) : 1,
-      basePartialsPath: `${__dirname}/src/components/base/views/partials`
-    })
 
   }
 
@@ -87,3 +88,20 @@ app.get('/continue-survey', (req, res) => {
 app.listen(PORT, () => {
   console.log(`App has booted on port ${PORT}`)
 })
+
+function getParticipantData(identifier) {
+  try {
+    const DATA = fs.readFileSync(`data/participants/${identifier}.json`)
+    return JSON.parse(DATA)
+  } catch(error) {
+    console.log(`There is no file for ${identifier}`)
+  }
+}
+
+function writeParticipantData(identifier, data) {
+  try {
+    fs.writeFileSync(`data/participants/${identifier}.json`, data)
+  } catch(error) {
+    console.log(`There is no file for ${identifier}.json`)
+  }
+}

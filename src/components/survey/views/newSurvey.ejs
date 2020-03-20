@@ -21,7 +21,8 @@
         <strong><%= uniquecode %></strong>
       </fieldset>
       <fieldset>
-        <input type="hidden" name="generatedcode" value="<%= uniquecode %>">
+        <input type="hidden" name="initialsetup" value="true">
+        <input type="hidden" name="identifier" value="<%= uniquecode %>">
         <input type="submit" value="Enquete beginnen">
       </fieldset>
     </form>

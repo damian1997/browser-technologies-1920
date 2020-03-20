@@ -1,3 +1,54 @@
 <section>
-  <h1>Question page 2</h1>
+  <h1>Progressive web apps</h1>
+  <form action="/survey" method="POST">
+    <fieldset>
+      <legend>Wat vind je van de begeleiding tijdens progressive web apps</legend>
+      <label>
+        <span>Slecht</span>
+        <input type="radio" name="support" value="slecht" required>
+      </label>
+      <label>
+        <span>Middelmatig</span>
+        <input type="radio" name="support" value="middelmatig" required>
+      </label>
+      <label>
+        <span>Goed</span>
+        <input type="radio" name="support" value="goed" required>
+      </label>
+    </fieldset>
+    <fieldset>
+      <legend>Wat vind je van het tempo tijdens progressive web apps</legend>
+      <label>
+        <span>Te sloom</span>
+        <input type="radio" name="course-pace" value="te sloom" required>
+      </label>
+      <label>
+        <span>Goed te volgen</span>
+        <input type="radio" name="course-pace" value="goed te volgen" required>
+      </label>
+      <label>
+        <span>Te snel</span>
+        <input type="radio" name="course-pace" value="te snel" required>
+      </label>
+    </fieldset>
+    <fieldset>
+      <legend>Welk cijfer geef je aan de progressive web apps</legend>
+      <label>
+        <span>Rating van 1 tot 10</span>
+        <input type="range" id="vol" name="rating" min="0" max="10">
+      </label>
+    </fieldset>
+    <fieldset>
+      <legend>Wat vond je van de course?</legend>
+      <label>
+        <span>Maximaal aantal characters 150</span>
+        <input type="textarea" name="message" placeholder="Max aantal characters: 150" maxlength="150" required>
+      </label>
+    </fieldset>
+    <fieldset>
+      <input type="hidden" name="identifier" value="<%= identifier %>">
+      <input type="hidden" name="page" value="1">
+      <input type="submit" value="Naar volgende vraag">
+    </fieldset>
+  </form>
 </section>
