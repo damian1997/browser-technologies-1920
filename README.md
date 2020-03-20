@@ -12,7 +12,7 @@ Repository for the browser technologies course.
 * De loop van de applicatie, werkt het op een duidelijke manier?
 
 ## Description
-** Case **
+**Case**
 "Ik wil een enquete kunnen invullen over de minor Web Development, met verschillende antwoord mogelijkheden. Als ik de enquete niet afkrijg, wil ik later weer verder gaan met waar ik ben gebleven."
 
 ## Wireframes
