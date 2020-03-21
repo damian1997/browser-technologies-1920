@@ -27,6 +27,7 @@ app.get('/new-survey', (req, res) => {
 })
 
 app.post('/survey', urlencodedParser, (req, res) => {
+  const QUESTIONS = fs.readdirSync('src/components/survey/views/partials')
 
   // New survey has been initialized
   if(req.body.initialsetup) {
@@ -42,6 +43,7 @@ app.post('/survey', urlencodedParser, (req, res) => {
       participant: req.body.name,
       page: 1,
       data: '',
+      questionsAmount: QUESTIONS.length,
       basePartialsPath: `${__dirname}/src/components/base/views/partials`
     })
 
@@ -72,6 +74,7 @@ app.post('/survey', urlencodedParser, (req, res) => {
         identifier: req.body.identifier,
         page: (PAGESWITHEMPTYVALUES.length) ? parseInt(PAGESWITHEMPTYVALUES[0].page) : (req.body.page !== undefined) ? parseInt(req.body.page) + 1 : parseInt(PARTICIPANTDATA[(PARTICIPANTDATA.length - 1)].page) + 1,
         data: (PAGESWITHEMPTYVALUES.length) ? PAGESWITHEMPTYVALUES[0]: '',
+        questionsAmount: QUESTIONS.length,
         basePartialsPath: `${__dirname}/src/components/base/views/partials`
       })
     } else {
