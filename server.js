@@ -76,11 +76,10 @@ app.post('/survey', urlencodedParser, (req, res) => {
         }
 
       }
-      console.log(__dirname)
-      // TODO fetch page number from json file and let person continue where he left off
+      
       res.render(`${__dirname}/src/components/survey/views/survey`, {
         title: 'Survey',
-        participant: PARTICIPANTDATA.name,
+        participant: PARTICIPANTDATA[0].name,
         identifier: req.body.identifier,
         page: (PAGESWITHEMPTYVALUES.length) ? parseInt(PAGESWITHEMPTYVALUES[0].page) : (req.body.page !== undefined) ? parseInt(req.body.page) + 1 : parseInt(PARTICIPANTDATA[(PARTICIPANTDATA.length - 1)].page) + 1,
         data: (PAGESWITHEMPTYVALUES.length) ? PAGESWITHEMPTYVALUES[0]: '',
