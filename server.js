@@ -19,9 +19,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/new-survey', (req, res) => {
+  const UNIQUECODE = Math.floor(100000 + Math.random() * 900000)
+
   res.render(`${__dirname}/src/components/survey/views/newSurvey`, {
     title: 'Survey',
-    uniquecode: Math.floor(100000 + Math.random() * 900000),
+    uniquecode: UNIQUECODE,
     basePartialsPath: `${__dirname}/src/components/base/views/partials`
   })
 })
@@ -43,7 +45,7 @@ app.post('/survey', urlencodedParser, (req, res) => {
       participant: req.body.name,
       page: 1,
       data: '',
-      questionsAmount: QUESTIONS.length,
+      questionsAmount: (QUESTIONS.length - 1),
       basePartialsPath: `${__dirname}/src/components/base/views/partials`
     })
 
@@ -63,10 +65,18 @@ app.post('/survey', urlencodedParser, (req, res) => {
       })
     
       if(req.body.surveycontinue !== 'true') {
-        PARTICIPANTDATA.push(req.body)
-        writeParticipantData(req.body.identifier, JSON.stringify(PARTICIPANTDATA, null, 2))
-      }
 
+        const ALREADYINFILE = PARTICIPANTDATA.find(entry => {
+          return entry.page === req.body.page
+        })
+        
+        if(ALREADYINFILE === undefined) {
+          PARTICIPANTDATA.push(req.body)
+          writeParticipantData(req.body.identifier, JSON.stringify(PARTICIPANTDATA, null, 2))
+        }
+
+      }
+      console.log(__dirname)
       // TODO fetch page number from json file and let person continue where he left off
       res.render(`${__dirname}/src/components/survey/views/survey`, {
         title: 'Survey',
@@ -74,7 +84,7 @@ app.post('/survey', urlencodedParser, (req, res) => {
         identifier: req.body.identifier,
         page: (PAGESWITHEMPTYVALUES.length) ? parseInt(PAGESWITHEMPTYVALUES[0].page) : (req.body.page !== undefined) ? parseInt(req.body.page) + 1 : parseInt(PARTICIPANTDATA[(PARTICIPANTDATA.length - 1)].page) + 1,
         data: (PAGESWITHEMPTYVALUES.length) ? PAGESWITHEMPTYVALUES[0]: '',
-        questionsAmount: QUESTIONS.length,
+        questionsAmount: (QUESTIONS.length - 1),
         basePartialsPath: `${__dirname}/src/components/base/views/partials`
       })
     } else {
@@ -117,7 +127,6 @@ function getParticipantData(identifier) {
 }
 
 function writeParticipantData(identifier, data) {
-  console.log(`EEEEY KUT ${data}`)
   try {
     fs.writeFileSync(`data/participants/${identifier}.json`, data)
   } catch(error) {

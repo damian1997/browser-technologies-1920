@@ -1,5 +1,5 @@
 <section>
-  <h1>Browser technologies</h1>
+  <h1>Wat vond je van de Browser technologies course?</h1>
   <% const progress = page - 1 %>
   <progress max="<%= questionsAmount %>" value="<%= progress %>">1</progress>
   <form action="/survey" method="POST">
@@ -96,7 +96,7 @@
 
     </fieldset>
     <fieldset>
-      <input type="hidden" name="identifier" value="<%= identifier %>">
+      <input id="identifier-setter" type="hidden" name="identifier" value="<%= identifier %>">
       <input type="hidden" name="page" value="1">
       <input type="submit" value="Naar volgende vraag">
     </fieldset>
