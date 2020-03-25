@@ -82,6 +82,7 @@ progress[value]::-webkit-progress-bar {
 progress[value]::-webkit-progress-value {
   background: #476793;
   background: var(--primary-color);
+  animation: gradientToSolid 1s infinite;
 }
 
 form fieldset {
@@ -106,4 +107,9 @@ form fieldset textarea {
 
 form fieldset input[type="range"] {
   display: block;
+}
+
+@keyframes gradientToSolid {
+  from {background: linear-gradient(#fff,#476793)}
+  to {background: #476793}
 }
