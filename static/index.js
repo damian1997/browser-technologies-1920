@@ -31,7 +31,6 @@ function checkIdentifier() {
 
 /* AJAX SURVEY PAGINATION LOADING HANDLER */
 const mutationObserver = new MutationObserver((mutations) => {
-  console.log('heey mutation occured')
   getNextQuestion() 
 })
 
@@ -48,7 +47,6 @@ getNextQuestion()
 function getNextQuestion() {
   const SURVEYFORM = document.querySelector('form[name="survey"]')
   if(SURVEYFORM) {
-    console.log('Survey form found')
     SURVEYFORM.addEventListener('submit', (event) => {
       event.preventDefault()
       const FORMDATA = []
@@ -97,7 +95,5 @@ function getNextQuestion() {
       XHR.send(`${QUERY}`)
 
     })
-  } else {
-    console.log('No survey form found')
   }
 }
