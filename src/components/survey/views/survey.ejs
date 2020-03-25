@@ -2,19 +2,24 @@
 <%- include(`${basePartialsPath}/header`) %>
 
 <main>
-  <% if(page === 1) { %>
-    <%- include('partials/question1') %>
-  <% } %>
-  <% if(page === 2) { %>
-    <%- include('partials/question2') %>
-  <% } %>
-  <% if(page === 3) { %>
-    <%- include('partials/question3') %>
-  <% } %>
-  <% if(page === 4) { %>
-    <%- include('partials/done ') %>
-  <% } %>
-
+  <section>
+      <% const progress = page - 1 %>
+    <progress max="<%= questionsAmount %>" value="<%= progress %>">1</progress>
+  </section>
+  <div id="form-watcher">
+    <% if(page === 1) { %>
+      <%- include('partials/question1') %>
+    <% } %>
+    <% if(page === 2) { %>
+      <%- include('partials/question2') %>
+    <% } %>
+    <% if(page === 3) { %>
+      <%- include('partials/question3') %>
+    <% } %>
+    <% if(page === 4) { %>
+      <%- include('partials/done') %>
+    <% } %>
+  </div>
 </main>
 
 <%- include(`${basePartialsPath}/footer`) %>

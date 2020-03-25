@@ -1,7 +1,7 @@
 import express from 'express'
 const app = express()
 const PORT = process.env.PORT || 4000
-
+;
 import fs from 'fs'
 import url from 'url'
 
@@ -29,6 +29,8 @@ app.get('/new-survey', (req, res) => {
 })
 
 app.post('/survey', urlencodedParser, (req, res) => {
+
+  console.log(req.body)
   const QUESTIONS = fs.readdirSync('src/components/survey/views/partials')
 
   // New survey has been initialized
@@ -63,20 +65,20 @@ app.post('/survey', urlencodedParser, (req, res) => {
           }
         }
       })
-    
+
       if(req.body.surveycontinue !== 'true') {
 
         const ALREADYINFILE = PARTICIPANTDATA.find(entry => {
           return entry.page === req.body.page
         })
-        
+
         if(ALREADYINFILE === undefined) {
           PARTICIPANTDATA.push(req.body)
           writeParticipantData(req.body.identifier, JSON.stringify(PARTICIPANTDATA, null, 2))
         }
 
       }
-      
+
       res.render(`${__dirname}/src/components/survey/views/survey`, {
         title: 'Survey',
         participant: PARTICIPANTDATA[0].name,

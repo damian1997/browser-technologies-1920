@@ -56,6 +56,11 @@ main > section {
   margin: auto;
 }
 
+main > div {
+  max-width: 1110px;
+  margin: auto;
+}
+
 /* FORM STYLING */
 form {
   padding: 20px 15px;
