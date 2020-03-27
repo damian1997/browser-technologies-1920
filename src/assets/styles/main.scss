@@ -110,22 +110,20 @@ form fieldset input[type="range"],form fieldset input[type="text"] {
 }
 
 #form-watcher {
+  overflow: hidden;
+}
+
+#form-watcher #forms {
   position: relative;
+  white-space: nowrap;
+  font-size: 0;
+  left: 0;
+  transition: 250ms ease-in-out;
 }
 
-#form-watcher > section {
-  position: absolute;
-  left: 100vw;
+#form-watcher #forms section {
+  display: inline-block;
+  position: relative;
   width: 100%;
-  animation: fadeForm 2s forwards;
-}
-
-@keyframes fadeForm {
-  from {left: 100vw}
-  to {left: 0}
-}
-
-@keyframes gradientToSolid {
-  from {background: linear-gradient(#fff,#476793)}
-  to {background: #476793}
+  font-size: 1rem;
 }

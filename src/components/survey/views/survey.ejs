@@ -7,18 +7,20 @@
     <progress max="<%= questionsAmount %>" value="<%= progress %>">1</progress>
   </section>
   <div id="form-watcher">
-    <% if(page === 1) { %>
-      <%- include('partials/question1') %>
-    <% } %>
-    <% if(page === 2) { %>
-      <%- include('partials/question2') %>
-    <% } %>
-    <% if(page === 3) { %>
-      <%- include('partials/question3') %>
-    <% } %>
-    <% if(page === 4) { %>
-      <%- include('partials/done') %>
-    <% } %>
+    <div id="forms">
+      <% if(page === 1) { %>
+        <%- include('partials/question1') %>
+      <% } %>
+      <% if(page === 2) { %>
+        <%- include('partials/question2') %>
+      <% } %>
+      <% if(page === 3) { %>
+        <%- include('partials/question3') %>
+      <% } %>
+      <% if(page === 4) { %>
+        <%- include('partials/done') %>
+      <% } %>
+    </div>
   </div>
 </main>
 

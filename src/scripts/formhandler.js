@@ -20,11 +20,11 @@ function formSubmitHandler() {
     SURVEYFORM.forEach(form => {
       form.addEventListener('submit', (event) => {
         event.preventDefault()
-        const FORMDATA = []
-        const RADIOFIELDS = form.querySelectorAll('input[type="radio"]')
-        const RANGES = form.querySelectorAll('input[type="range"]') 
-        const TEXTAREAS = form.querySelectorAll('textarea')
-        const HIDDENFIELDS = form.querySelectorAll('input[type="hidden"]')
+        const FORMDATA = [],
+              RADIOFIELDS = form.querySelectorAll('input[type="radio"]'),
+              RANGES = form.querySelectorAll('input[type="range"]'),
+              TEXTAREAS = form.querySelectorAll('textarea'),
+              HIDDENFIELDS = form.querySelectorAll('input[type="hidden"]')
 
         if(RADIOFIELDS) {
           const checkedRadios = [...RADIOFIELDS].filter(node => {
@@ -53,12 +53,15 @@ function formSubmitHandler() {
           })
         }
 
-        const QUERY = FORMDATA.join('&')
-        const XHR = new XMLHttpRequest()
+        const QUERY = FORMDATA.join('&'),
+              XHR = new XMLHttpRequest()
 
         XHR.onload = () => {
-          const SURVEYWATCHER = document.getElementById('form-watcher')
-          SURVEYWATCHER.insertAdjacentHTML('beforeend',XHR.response)
+          const SURVEYCONTAINER = document.getElementById('forms'),
+                formSections = SURVEYCONTAINER.querySelectorAll('section')
+          
+          SURVEYCONTAINER.setAttribute('style', `left: -${(formSections.length * 100)}%;`)
+          SURVEYCONTAINER.insertAdjacentHTML('beforeend',XHR.response)
         }
 
         XHR.open('POST', `${window.location.origin}/survey`)
@@ -71,7 +74,6 @@ function formSubmitHandler() {
 }
 
 function animateForm() {
-
 }
 
 formSubmitHandler()

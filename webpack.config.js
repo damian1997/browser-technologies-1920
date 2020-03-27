@@ -10,6 +10,7 @@ const ManifestPlugin = require('webpack-manifest-plugin')
 
 const parsePath = path.parse(__filename);
 module.exports = {
+  watch: true,
   devtool: 'eval',
   mode: 'production',
   entry: {
