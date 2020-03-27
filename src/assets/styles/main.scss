@@ -105,8 +105,24 @@ form fieldset textarea {
   width: 100%;
 }
 
-form fieldset input[type="range"] {
+form fieldset input[type="range"],form fieldset input[type="text"] {
   display: block;
+}
+
+#form-watcher {
+  position: relative;
+}
+
+#form-watcher > section {
+  position: absolute;
+  left: 100vw;
+  width: 100%;
+  animation: fadeForm 2s forwards;
+}
+
+@keyframes fadeForm {
+  from {left: 100vw}
+  to {left: 0}
 }
 
 @keyframes gradientToSolid {
