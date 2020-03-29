@@ -1,6 +1,6 @@
 const mutationObserver = new MutationObserver((mutations) => {
   formSubmitHandler()
-  animateForm()
+  progressSetter()
 })
 
 if(document.getElementById('form-watcher')) {
@@ -63,7 +63,7 @@ function formSubmitHandler() {
           SURVEYCONTAINER.setAttribute('style', `left: -${(formSections.length * 100)}%;`)
           SURVEYCONTAINER.insertAdjacentHTML('beforeend',XHR.response)
         }
-
+        console.log(QUERY)
         XHR.open('POST', `${window.location.origin}/survey`)
         XHR.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
         XHR.send(`${QUERY}&xhr=true`)
@@ -73,7 +73,31 @@ function formSubmitHandler() {
   }
 }
 
-function animateForm() {
+function progressSetter() {
+  const PROGRESSBAR = document.querySelector('progress')
+  const pageNodes = document.querySelectorAll('input[name="page"]')
+  const pageValue = pageNodes[pageNodes.length-1].value
+  console.log(pageValue)
+  switch(pageValue) {
+    case '1':
+      console.log('val is 1')
+      PROGRESSBAR.value = 0
+      break;
+    case '2':
+      console.log('val is 2')
+      PROGRESSBAR.value = 1
+      break;
+    case '3':
+      console.log('val is 3')
+      PROGRESSBAR.value = 2
+      break;
+    case '4':
+      PROGRESSBAR.value = 3
+      break;
+    default:
+      PROGRESSBAR.value = 0 
+      break;
+  }
 }
 
 formSubmitHandler()

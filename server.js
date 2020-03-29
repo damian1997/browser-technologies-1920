@@ -2,6 +2,7 @@ import express from 'express'
 import compression from 'compression'
 import fs from 'fs'
 import bodyParser from 'body-parser'
+import cookieSession from 'cookie-session'
 
 const PORT = process.env.PORT || 4000,
       app = express(),
@@ -12,8 +13,13 @@ const PORT = process.env.PORT || 4000,
 app
   .use(compression())
   .use(express.static('static'))
+  .use(cookieSession({
+    name: 'session',
+    keys: ['initialsetup']
+  }))
   .set('view engine', 'ejs')
   .set('views', 'src/components')
+  .set('trust proxy', 1)
 
 
 // ROUTES

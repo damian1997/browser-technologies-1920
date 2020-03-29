@@ -3,8 +3,9 @@ import fs from 'fs'
 export default function(req,res,COMPONENTPATH,BUNDLE) {
 
   const QUESTIONS = fs.readdirSync('src/components/survey/views/partials')
+  if(req.body.initialsetup !== undefined && req.session.initialSetup === true) {
+    req.session.initialSetup = false
 
-  if(req.body.initialsetup) {
     const POSTDATA = JSON.stringify([req.body], null, 2)
 
     if(!req.body.surveycontinue) {
@@ -25,7 +26,6 @@ export default function(req,res,COMPONENTPATH,BUNDLE) {
 
   } else {
     const PARTICIPANTFILENAMES = fs.readdirSync('data/participants/')
-
     if(PARTICIPANTFILENAMES.includes(`${req.body.identifier}.json`)) {
       const PARTICIPANTDATA = getParticipantData(req.body.identifier)
 
@@ -39,7 +39,6 @@ export default function(req,res,COMPONENTPATH,BUNDLE) {
       })
 
       if(req.body.surveycontinue !== 'true') {
-
         const ALREADYINFILE = PARTICIPANTDATA.find(entry => {
           return entry.page === req.body.page
         })
@@ -48,8 +47,8 @@ export default function(req,res,COMPONENTPATH,BUNDLE) {
           PARTICIPANTDATA.push(req.body)
           writeParticipantData(req.body.identifier, JSON.stringify(PARTICIPANTDATA, null, 2))
         }
-
       }
+
       if(req.body.xhr === 'true') {
         const QUESTIONNUMBER = (PAGESWITHEMPTYVALUES.length) ? parseInt(PAGESWITHEMPTYVALUES[0].page) : (req.body.page !== undefined) ? parseInt(req.body.page) + 1 : parseInt(PARTICIPANTDATA[(PARTICIPANTDATA.length - 1)].page) + 1
         let partial = `question${QUESTIONNUMBER}`
