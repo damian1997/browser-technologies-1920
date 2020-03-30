@@ -3,10 +3,10 @@ Repository for the browser technologies course.
 [DEMO](https://sleepy-anchorage-02272.herokuapp.com/)
 
 ## Table of contents
-* [Description](description)
-* [Wireframes](wireframes)
-* [Prerequisites](prerequisites)
-* [Installing](installing)
+* [Description](#description)
+* [Wireframes](#wireframes)
+* [Prerequisites](#prerequisites)
+* [Installing](#installing)
 
 ## Description
 **Case:**
