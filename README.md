@@ -83,7 +83,7 @@ Wanneer de gebruiker aankomt op de site krijgt hij de mogelijkheid om een nieuwe
 <details>
   <summary>Show usable layer</summary>
 <img src="./github/videos/usable-layer.gif">
-</detail>
+</details>
 
 ## Pleasurable layer
 <details>
