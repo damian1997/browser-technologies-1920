@@ -87,7 +87,7 @@ Wanneer de gebruiker aankomt op de site krijgt hij de mogelijkheid om een nieuwe
 
 ## Pleasurable layer
 <details>
-  <summary>Show usable layer</summary>
+  <summary>Show pleasurable layer</summary>
 <img src="./github/videos/pleasurable-layer.gif">
 </details>
 
