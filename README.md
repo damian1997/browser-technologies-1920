@@ -28,67 +28,64 @@ Wanneer de gebruiker aankomt op de site krijgt hij de mogelijkheid om een nieuwe
 ### Start screen
 
 <details>
-  <summary>Show wireframe</summary>
-
+  <summary>Bekijk wireframe</summary>
   <img src="./github/images/screen-1.png">
 </details>
 
 ### Userinformation screen
 
 <details>
-  <summary>Show wireframe</summary>
-
+  <summary>Bekijk wireframe</summary>
   <img src="./github/images/screen-2.png">
 </details>
 
 ### Enquete form step 1
 
 <details>
-  <summary>Show wireframe</summary>
-
+  <summary>Bekijk wireframe</summary>
   <img src="./github/images/screen-3.png">
 </details>
 
 ### Enquete form step 2
 
 <details>
-  <summary>Show wireframe</summary>
-
+  <summary>Bekijk wireframe</summary>
   <img src="./github/images/screen-4.png">
 </details>
 
 ### Enquete finished
 
 <details>
-  <summary>Show wireframe</summary>
-
+  <summary>Bekijk wireframe</summary>
   <img src="./github/images/screen-5.png">
 </details>
 
 ### Continue where you left off screen
 
 <details>
-  <summary>Show wireframe</summary>
-
+  <summary>Bekijk wireframe</summary>
   <img src="./github/images/screen-6.png">
 </details>
 
 ## Functional layer
+In de functional laag is alleen de core functionaliteit te zien. In deze laag is geen javascript en geen css toegepast. Alles wordt op de server afgehandeld en wordt de content aan de hand van form POST requests opgevraagd.
+De enquete wordt per stap opgeslagen op de server in een json bestand. Het bestand wordt bij elke submit weggeschreven. De gebruiker krijgt aan het begin van de enquete een unieke code die hij/zij later kan gebruiken om verder te gaan met de enquete.
+
 <details>
-  <summary>Show functional layer</summary>
-<img src="./github/videos/functional-layer.gif">
+  <summary>Bekijk functional layer</summary>
+  <img src="./github/videos/functional-layer.gif">
 </details>
 
 ## Usable layer
 <details>
-  <summary>Show usable layer</summary>
-<img src="./github/videos/usable-layer.gif">
+  <summary>Bekijk usable layer</summary>
+  <img src="./github/videos/usable-layer.gif">
 </details>
 
 ## Pleasurable layer
 <details>
-  <summary>Show pleasurable layer</summary>
-<img src="./github/videos/pleasurable-layer.gif">
+  <summary>Bekijk pleasurable layer</summary>
+  <img src="./github/videos/pleasurable-layer.gif">
 </details>
 
 ## Prerequisites
