@@ -73,6 +73,18 @@ Wanneer de gebruiker aankomt op de site krijgt hij de mogelijkheid om een nieuwe
   <img src="./github/images/screen-6.png">
 </details>
 
+## Functional layer
+
+<video src="./github/videos/functional-layer.mp4" width="320" height="200" controls preload></video>
+
+## Usable layer
+
+<video src="./github/videos/usable-layer.mp4" width="320" height="200" controls preload></video>
+
+## Pleasurable layer
+
+<video src="./github/videos/pleasurable-layer.mp4" width="320" height="200" controls preload></video>
+
 ## Prerequisites
 * Nodejs
 * Npm
