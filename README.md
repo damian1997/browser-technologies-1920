@@ -4,6 +4,7 @@ Repository for the browser technologies course.
 
 ## Table of contents
 * [Description](#description)
+* [Todo](#todo)
 * [Wireframes](#wireframes)
 * [Prerequisites](#prerequisites)
 * [Installing](#installing)
@@ -14,6 +15,12 @@ Repository for the browser technologies course.
 
 **Werking van de applicatie:**
 Wanneer de gebruiker aankomt op de site krijgt hij de mogelijkheid om een nieuwe enquete te starten of door te gaan met een enquete die hij/zij eerder gestart heeft. Wanneer de gebruiker kiest om een nieuwe enquete te starten krijgt de gebruiker een unieke code waarmee hij zichzelf kan identificeren zodat als hij de enquete op een ander moment af wilt maken hij dit kan doen doormiddel van de unieke code.
+
+## Todo
+* Backwards navigation functionality for the survey form
+* Progress bar animating
+* Form validation
+* Form input feedback
 
 ## Wireframes
 
