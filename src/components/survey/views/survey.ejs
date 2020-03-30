@@ -2,11 +2,11 @@
 <%- include(`${basePartialsPath}/header`) %>
 
 <main>
-  <section>
-    <% const progress = page - 1 %>
-    <progress max="<%= questionsAmount %>" value="<%= progress %>">1</progress>
-  </section>
-  <div id="form-watcher">
+  <section id="form-watcher">
+    <div class="progress">
+      <% const progress = page - 1 %>
+      <progress max="<%= questionsAmount %>" value="<%= progress %>">1</progress>
+    </div>
     <div id="forms">
       <% if(page === 1) { %>
         <%- include('partials/question1') %>
@@ -21,7 +21,7 @@
         <%- include('partials/done') %>
       <% } %>
     </div>
-  </div>
+  </section>
 </main>
 
 <%- include(`${basePartialsPath}/footer`) %>

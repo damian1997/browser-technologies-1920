@@ -10,120 +10,61 @@ body {
 	margin: 0;
 	font-size: 16px;
   font-family: 'Roboto', sans-serif;
-}
-
-/* SETTINGS */
-
-
-/* NAVIGATION STYLING */
-header nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-header nav ul li a {
-  font-size: 1.5em;
-  color: #fff;
-  text-decoration: none;
-}
-
-
-/* HEADER STYLING */
-header {
-  padding: 10px 20px;
-  /* This is how you set a fallback color for when variables are not supported. IE11 */
-  background: #476793;
-  background: var(--primary-color);
-}
-
-header section {
-  max-width: 1110px;
-  margin: auto;
-}
-
-header section h1 {
-  margin: 0;
-}
-
-/* MAIN STYLING */
-
-main {
-    padding: 0 20px;
-}
-
-main > section {
-  max-width: 1110px;
-  margin: auto;
-}
-
-main > div {
-  max-width: 1110px;
-  margin: auto;
-}
-
-/* FORM STYLING */
-form {
-  padding: 20px 15px;
   background: #ddd;
 }
 
-section progress {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 100%;
-}
+main {
+  padding: 0 20px;
 
-progress[value]::-webkit-progress-bar {
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-}
-progress[value]::-webkit-progress-value {
-  background: #476793;
-  background: var(--primary-color);
-  animation: gradientToSolid 1s infinite;
-}
+  > section {
+    max-width: 1110px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 5px;
 
-form fieldset {
-  margin: 15px 0;
-  padding: 0;
-  border: 0;
-}
+    h1{
+      margin-top: 0;
+    }
 
-form fieldset legend {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
+    nav {
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
 
-form fieldset label {
-  display: block;
-}
+        li {
+          margin-bottom: 10px;
 
-form fieldset textarea {
-  display: block;
-  width: 100%;
-}
+          a {
+            display: inline-block;
+            width: 100%;
+            padding: 20px 0;
+            color: #000;
+            border-radius: 5px;
+            border: 1px solid #eee;
+            text-decoration: none;
+            transition: 250ms ease-in-out;
 
-form fieldset input[type="range"],form fieldset input[type="text"] {
-  display: block;
-}
+            &:hover {
+              background: #476793;
+              color: #fff;
+            }
 
-#form-watcher {
-  overflow: hidden;
-}
+            &:focus {
+              background: #476793;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
 
-#form-watcher #forms {
-  position: relative;
-  white-space: nowrap;
-  font-size: 0;
-  left: 0;
-  transition: 250ms ease-in-out;
-}
-
-#form-watcher #forms section {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  font-size: 1rem;
+  > div {
+    max-width: 1110px;
+    margin: auto;
+  }
 }

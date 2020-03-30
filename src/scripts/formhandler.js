@@ -5,12 +5,9 @@ const mutationObserver = new MutationObserver((mutations) => {
 
 if(document.getElementById('form-watcher')) {
   mutationObserver.observe(document.getElementById('form-watcher'), {
-    attributes: true,
     characterData: true,
     childList: true,
     subtree: true,
-    attributeOldValue: false,
-    characterDataOldValue: true
   })
 }
 
@@ -63,7 +60,7 @@ function formSubmitHandler() {
           SURVEYCONTAINER.setAttribute('style', `left: -${(formSections.length * 100)}%;`)
           SURVEYCONTAINER.insertAdjacentHTML('beforeend',XHR.response)
         }
-        console.log(QUERY)
+
         XHR.open('POST', `${window.location.origin}/survey`)
         XHR.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
         XHR.send(`${QUERY}&xhr=true`)

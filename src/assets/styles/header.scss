@@ -1,0 +1,44 @@
+header {
+  padding: 10px 20px;
+  background: #476793;
+  background: var(--primary-color);
+  section {
+    max-width: 1110px;
+    margin: auto;
+  }
+
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        a {
+          font-size: 1.5em;
+          color: #fff;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+header section {
+  max-width: 1110px;
+  margin: auto;
+}
+
+header section h1 {
+  margin: 0;
+}

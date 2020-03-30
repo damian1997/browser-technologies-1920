@@ -1,4 +1,4 @@
 // Import custom scripts here
-import './assets/styles/main.scss';
+import './index.scss';
 import './scripts/formhandler'
 import './scripts/setidentifier'
