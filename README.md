@@ -21,6 +21,7 @@ Wanneer de gebruiker aankomt op de site krijgt hij de mogelijkheid om een nieuwe
 * Progress bar animating
 * Form validation
 * Form input feedback
+* Disabeling previous survey form when fetching next question via XML
 
 ## Wireframes
 
