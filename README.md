@@ -74,13 +74,22 @@ Wanneer de gebruiker aankomt op de site krijgt hij de mogelijkheid om een nieuwe
 </details>
 
 ## Functional layer
+<details>
+  <summary>Show functional layer</summary>
 <img src="./github/videos/functional-layer.gif">
+</details>
 
 ## Usable layer
+<details>
+  <summary>Show usable layer</summary>
 <img src="./github/videos/usable-layer.gif">
+</detail>
 
 ## Pleasurable layer
+<details>
+  <summary>Show usable layer</summary>
 <img src="./github/videos/pleasurable-layer.gif">
+</details>
 
 ## Prerequisites
 * Nodejs
