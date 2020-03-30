@@ -75,15 +75,24 @@ Wanneer de gebruiker aankomt op de site krijgt hij de mogelijkheid om een nieuwe
 
 ## Functional layer
 
-<video src="./github/videos/functional-layer.mp4" width="320" height="200" controls preload></video>
+<video width="320" height="200" controls preload>
+    <source src="./github/videos/functional-layer.mp4"></source>
+    <source src="./github/videos/functional-layer.webm"></source>
+</video>
 
 ## Usable layer
 
-<video src="./github/videos/usable-layer.mp4" width="320" height="200" controls preload></video>
+<video width="320" height="200" controls preload>
+    <source src="./github/videos/usable-layer.mp4"></source>
+    <source src="./github/videos/usable-layer.webm"></source>
+</video>
 
 ## Pleasurable layer
 
-<video src="./github/videos/pleasurable-layer.mp4" width="320" height="200" controls preload></video>
+<video width="320" height="200" controls preload>
+    <source src="./github/videos/functional-layer.mp4"></source>
+    <source src="./github/videos/functional-layer.webm"></source>
+</video>
 
 ## Prerequisites
 * Nodejs
