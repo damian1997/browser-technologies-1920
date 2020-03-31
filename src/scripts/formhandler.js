@@ -18,10 +18,10 @@ function formSubmitHandler() {
       form.addEventListener('submit', (event) => {
         event.preventDefault()
         const FORMDATA = [],
-              RADIOFIELDS = form.querySelectorAll('input[type="radio"]'),
-              RANGES = form.querySelectorAll('input[type="range"]'),
-              TEXTAREAS = form.querySelectorAll('textarea'),
-              HIDDENFIELDS = form.querySelectorAll('input[type="hidden"]')
+          RADIOFIELDS = form.querySelectorAll('input[type="radio"]'),
+          RANGES = form.querySelectorAll('input[type="range"]'),
+          TEXTAREAS = form.querySelectorAll('textarea'),
+          HIDDENFIELDS = form.querySelectorAll('input[type="hidden"]')
 
         if(RADIOFIELDS) {
           const checkedRadios = [...RADIOFIELDS].filter(node => {
@@ -51,19 +51,23 @@ function formSubmitHandler() {
         }
 
         const QUERY = FORMDATA.join('&'),
-              XHR = new XMLHttpRequest()
+          XHR = new XMLHttpRequest()
 
-        XHR.onload = () => {
-          const SURVEYCONTAINER = document.getElementById('forms'),
-                formSections = SURVEYCONTAINER.querySelectorAll('section')
-          
-          SURVEYCONTAINER.setAttribute('style', `left: -${(formSections.length * 100)}%;`)
-          SURVEYCONTAINER.insertAdjacentHTML('beforeend',XHR.response)
+        if(XHR) {
+
+          XHR.onload = () => {
+            const SURVEYCONTAINER = document.getElementById('forms'),
+              formSections = SURVEYCONTAINER.querySelectorAll('section')
+
+            SURVEYCONTAINER.setAttribute('style', `left: -${(formSections.length * 100)}%;`)
+            SURVEYCONTAINER.insertAdjacentHTML('beforeend',XHR.response)
+          }
+
+          XHR.open('POST', `${window.location.origin}/survey`)
+          XHR.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+          XHR.send(`${QUERY}&xhr=true`)
+
         }
-
-        XHR.open('POST', `${window.location.origin}/survey`)
-        XHR.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
-        XHR.send(`${QUERY}&xhr=true`)
 
       })
     })
