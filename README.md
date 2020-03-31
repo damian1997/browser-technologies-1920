@@ -100,72 +100,76 @@ Code snippets voor afhandelen XMLHttpRequest
   naar de server. Vervolgens doe ik een feature detection op  XHR en stuur ik de query string naar mijn server en insert ik de html response in mijn form container.
 
   ```javascript
-  const SURVEYFORM = document.querySelectorAll('form[name="survey"]')
-  if(SURVEYFORM) {
-    SURVEYFORM.forEach(form => {
-      form.addEventListener('submit', (event) => {
-        event.preventDefault()
-        const FORMDATA = [],
-          RADIOFIELDS = form.querySelectorAll('input[type="radio"]'),
-          RANGES = form.querySelectorAll('input[type="range"]'),
-          TEXTAREAS = form.querySelectorAll('textarea'),
-          HIDDENFIELDS = form.querySelectorAll('input[type="hidden"]')
+  if(mutationObserver) {
+    const SURVEYFORM = document.querySelectorAll('form[name="survey"]')
+    if(SURVEYFORM) {
+      SURVEYFORM.forEach(form => {
+        form.addEventListener('submit', (event) => {
+          event.preventDefault()
+          const FORMDATA = [],
+            RADIOFIELDS = form.querySelectorAll('input[type="radio"]'),
+            RANGES = form.querySelectorAll('input[type="range"]'),
+            TEXTAREAS = form.querySelectorAll('textarea'),
+            HIDDENFIELDS = form.querySelectorAll('input[type="hidden"]')
 
-        if(RADIOFIELDS) {
-          const checkedRadios = [...RADIOFIELDS].filter(node => {
-            return (node.checked)
-          })
-          checkedRadios.forEach(node=> {
-            FORMDATA.push(`${node.name}=${node.value}`)
-          })
-        }
-
-        if(TEXTAREAS) {
-          const textAreas = [...TEXTAREAS].forEach(node => {
-            FORMDATA.push(`${node.name}=${node.value}`)
-          })
-        }
-
-        if(RANGES) {
-          const ranges = [...RANGES].forEach(node => {
-            FORMDATA.push(`${node.name}=${node.value}`)
-          })
-        }
-
-        if(HIDDENFIELDS) {
-          const hiddenFields = [...HIDDENFIELDS].forEach(node => {
-            FORMDATA.push(`${node.name}=${node.value}`)
-          })
-        }
-
-        const QUERY = FORMDATA.join('&'),
-          XHR = new XMLHttpRequest()
-
-        if(XHR) {
-
-          XHR.onload = () => {
-            const SURVEYCONTAINER = document.getElementById('forms'),
-              formSections = SURVEYCONTAINER.querySelectorAll('section')
-
-            SURVEYCONTAINER.setAttribute('style', `left: -${(formSections.length * 100)}%;`)
-            SURVEYCONTAINER.insertAdjacentHTML('beforeend',XHR.response)
+          if(RADIOFIELDS) {
+            const checkedRadios = [...RADIOFIELDS].filter(node => {
+              return (node.checked)
+            })
+            checkedRadios.forEach(node=> {
+              FORMDATA.push(`${node.name}=${node.value}`)
+            })
           }
 
-          XHR.open('POST', `${window.location.origin}/survey`)
-          XHR.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
-          XHR.send(`${QUERY}&xhr=true`)
+          if(TEXTAREAS) {
+            const textAreas = [...TEXTAREAS].forEach(node => {
+              FORMDATA.push(`${node.name}=${node.value}`)
+            })
+          }
 
-        }
+          if(RANGES) {
+            const ranges = [...RANGES].forEach(node => {
+              FORMDATA.push(`${node.name}=${node.value}`)
+            })
+          }
 
+          if(HIDDENFIELDS) {
+            const hiddenFields = [...HIDDENFIELDS].forEach(node => {
+              FORMDATA.push(`${node.name}=${node.value}`)
+            })
+          }
+
+          const QUERY = FORMDATA.join('&'),
+            XHR = new XMLHttpRequest()
+
+          if(XHR) {
+
+            XHR.onload = () => {
+              const SURVEYCONTAINER = document.getElementById('forms'),
+                formSections = SURVEYCONTAINER.querySelectorAll('section')
+
+              SURVEYCONTAINER.setAttribute('style', `left: -${(formSections.length * 100)}%;`)
+              SURVEYCONTAINER.insertAdjacentHTML('beforeend',XHR.response)
+            }
+
+            XHR.open('POST', `${window.location.origin}/survey`)
+            XHR.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+            XHR.send(`${QUERY}&xhr=true`)
+
+          }
+
+        })
       })
-    })
+    }
   }
   ```
 
   Nu kon ik met de server praten vanuit de client, echter wanneer ik nu een nieuw formulier insert in de container wordt het submit event niet toegevoegd aan het formulier, om
   dit op te lossen heb ik gezocht naar een manier om mutaties in mijn dom structuur te observeren. Dit doe ik door gebruik te maken van de MutationObserver api.
   In het onderstaande stuk code is te zien dat ik op mijn form-watcher container kijk of de subtree, childlist en characterData aangepast wordt.
-  Als dit het geval is wordt de formSubmitHandler functie aangeroepen en zal dus het submit event toegevoegd worden aan het nieuwe form.
+  Als dit het geval is wordt de formSubmitHandler functie aangeroepen en zal dus het submit event toegevoegd worden aan het nieuwe form. Voor mutationObserver heb ik geen
+  goed alternatief kunnen vinden, wanneer mutationObserver dus niet ondersteund wordt zal de clientside code niet uitgevoerd worden en zal het op normale manier op de server
+  afgehandeld worden.
 
   ```javascript
   const mutationObserver = new MutationObserver((mutations) => {
