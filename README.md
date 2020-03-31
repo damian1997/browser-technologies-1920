@@ -162,6 +162,26 @@ Code snippets voor afhandelen XMLHttpRequest
   }
   ```
 
+  Nu kon ik met de server praten vanuit de client, echter wanneer ik nu een nieuw formulier insert in de container wordt het submit event niet toegevoegd aan het formulier, om
+  dit op te lossen heb ik gezocht naar een manier om mutaties in mijn dom structuur te observeren. Dit doe ik door gebruik te maken van de MutationObserver api.
+  In het onderstaande stuk code is te zien dat ik op mijn form-watcher container kijk of de subtree, childlist en characterData aangepast wordt.
+  Als dit het geval is wordt de formSubmitHandler functie aangeroepen en zal dus het submit event toegevoegd worden aan het nieuwe form.
+
+  ```javascript
+  const mutationObserver = new MutationObserver((mutations) => {
+    formSubmitHandler()
+    progressSetter()
+  })
+
+  if(document.getElementById('form-watcher')) {
+    mutationObserver.observe(document.getElementById('form-watcher'), {
+      characterData: true,
+      childList: true,
+      subtree: true,
+    })
+  }
+  ```
+
 </details>
 
 ## Prerequisites
