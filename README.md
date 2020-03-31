@@ -313,7 +313,7 @@ kan worden.
 
 Stackoverflow accepted answer
 
-**Ok, somebody explained this to me. It's a Mac problem. Mozilla is being true to operating system settings in Mac OS.
+**Ok, somebody explained this to me. It's a Mac problem. Mozilla is being true to operating system settings in Mac OS.**
 
 There are two distinct ways around this on the user side. Both seem to work:
 
