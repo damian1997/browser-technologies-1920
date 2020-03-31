@@ -3,8 +3,7 @@ import fs from 'fs'
 export default function(req,res,COMPONENTPATH,BUNDLE) {
 
   const QUESTIONS = fs.readdirSync('src/components/survey/views/partials')
-  if(req.body.initialsetup !== undefined && req.session.initialSetup === true) {
-    req.session.initialSetup = false
+  if(req.body.initialsetup !== undefined) {
 
     const POSTDATA = JSON.stringify([req.body], null, 2)
 
