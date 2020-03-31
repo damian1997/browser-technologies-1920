@@ -406,6 +406,11 @@ Install packages
 npm install
 ```
 
+Bundle js and scss (this also watches files for changes so it automaticaly compiles the files)
+```
+npm run bundle
+```
+
 Run local server
 ```
 npm run dev
