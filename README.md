@@ -5,6 +5,7 @@ Repository for the browser technologies course.
 ## Table of contents
 * [Description](#description)
 * [Todo](#todo)
+* [Progressive enhancement](#progressive-enhancement)
 * [Wireframes](#wireframes)
 * [Functional layer](#functional-layer)
 * [Usable layer](#usable-layer)
@@ -27,6 +28,11 @@ Wanneer de gebruiker aankomt op de site krijgt hij de mogelijkheid om een nieuwe
 * Form validation
 * Form input feedback
 * Disabeling previous survey form when fetching next question via XML
+
+
+## Progressive enhancement
+Wat is progressive enhancement precies? Progressive enhancement draait om de core functionaliteit van een applicatie voor iedereen toegankelijk te maken
+en vervolgens doormiddel van lagen extra nuance aan te brengen om de ervaring van een gebruiker te verbetren.
 
 ## Wireframes
 
@@ -343,8 +349,16 @@ Werkt ook zoals verwacht, geen rare dingen gezien.
 Werkt ook zoals verwacht.
 
 ### IE
-TODO IE TESTING RESULTS
 
+#### Keyboard navigatie
+Werkt zoals verwacht.
+
+#### Styling
+Werkt ook zoals verwacht.
+
+#### Clientside javascript
+Tijdens het testen werd duidelijk dat mijn clientside javascript niet ondersteund wordt door IE, de applicatie is wel gewoon bruikbaar maar is
+iets minder fancy aangezien hij nu op de fallback draait.
 
 ## Feature testing
 ### Afbeeldingen uitzetten
