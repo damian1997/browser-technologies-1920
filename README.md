@@ -372,7 +372,11 @@ Wanneer een custom font niet ingeladen kan worden wordt een standaard font ingez
 ### Colors
 
 De kleuren die ik gebruikt hebben goed contrast tot elkaar en belangrijke elementen worden gehighlight met een velle kleur.
-<img src="./github/images/color-ratio.png">
+
+<details>
+  <summary>Color ratio bekijken</summary>
+  <img src="./github/images/color-ratio.png">
+</details>
 
 ### Muis of trackpad werkt niet
 
