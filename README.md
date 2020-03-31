@@ -68,8 +68,8 @@ Wanneer de gebruiker aankomt op de site krijgt hij de mogelijkheid om een nieuwe
 </details>
 
 ## Functional layer
-In de functional laag is alleen de core functionaliteit te zien. In deze laag is geen javascript en geen css toegepast. Alles wordt op de server afgehandeld en wordt de content aan de hand van form POST requests opgevraagd.
-De enquete wordt per stap opgeslagen op de server in een json bestand. Het bestand wordt bij elke submit weggeschreven. De gebruiker krijgt aan het begin van de enquete een unieke code die hij/zij later kan gebruiken om verder te gaan met de enquete.
+In de functional laag is alleen de core functionaliteit te zien. In deze laag is geen javascript en geen css toegepast. Alles wordt op de server afgehandeld en de content wordt aan de hand van form POST requests opgevraagd en opgeslagen.
+De enquete wordt per stap opgeslagen op de server in een json bestand. De gebruiker krijgt aan het begin van de enquete een unieke code die hij/zij later kan gebruiken om verder te gaan met de enquete.
 
 <details>
   <summary>Bekijk functional layer</summary>
@@ -77,12 +77,15 @@ De enquete wordt per stap opgeslagen op de server in een json bestand. Het besta
 </details>
 
 ## Usable layer
+In de usable layer is de css toegevoegd en is het 10x makkelijker om de applicatie te gebruiken. Elementen hebben een duidelijk contrast tot elkaar en er wordt doormiddel van grote en kleur aandacht gevestigd op de belangrijke elementen op de pagina.
 <details>
   <summary>Bekijk usable layer</summary>
   <img src="./github/videos/usable-layer.gif">
 </details>
 
 ## Pleasurable layer
+In de pleasurable layer heb ik met javascript op de client ervoor gezorgd dat de browser niet bij form submit een refresh hoeft te doen. Ik handel nu de POST af in de client en doe dit doormiddel van AJAX XMLHttpRequest.
+Door dit te doen kan ik de content doormiddel van een animatie het beeld in en uit laten faden en zorgt dit voor een meer plezierige ervaring voor de gebruiker.
 <details>
   <summary>Bekijk pleasurable layer</summary>
   <img src="./github/videos/pleasurable-layer.gif">
