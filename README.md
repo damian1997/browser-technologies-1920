@@ -10,6 +10,7 @@ Repository for the browser technologies course.
 * [Usable layer](#usable-layer)
 * [Pleasurabel layer](#pleasurable-layer)
 * [Browser testing](#browser-testing)
+* [Feature testing](#feature-testing)
 * [Prerequisites](#prerequisites)
 * [Installing](#installing)
 
