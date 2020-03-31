@@ -198,6 +198,51 @@ Door dit te doen kan ik de content doormiddel van een animatie het beeld in en u
 
 </details>
 
+### Code snippets voor het automatisch doorgaan met surver
+<details>
+  <summary>Bekijk code snippets</summary>
+
+  In onderstaande code check ik of de identifier-setter aanwezig is op de pagina wanneer dit het geval is return ik de unieke code en sla ik
+  deze op in local storage wanneer localstorage aanwezig is. Wanneer het element identifier-setter niet aanwezig is in de DOM check ik of het pad
+  in de url continue-survey bevat, wanneer dit het geval is haal ik uit de localstorage de identifier op en stuur ik een xhr request naar de server om
+  de survey van de gebruiker op te halen. Dit stuk code zorgt ervoor dat de gebruiker zijn unieke code niet zelf hoeft te onthouden wanneer hij localstorage
+  functionaliteit in zijn browser heeft.
+
+  ```javascript
+  init()
+  function init() {
+    if(window.localStorage) {
+      const IDENTIFIER = checkIdentifier()
+
+      if(IDENTIFIER !== undefined) {
+        window.localStorage.setItem('identifier', IDENTIFIER)
+      } else {
+        if(window.location.pathname.includes('continue-survey')) {
+          const LOCALSTORAGEIDENTIFIER = window.localStorage.getItem('identifier')
+          const XHR = new XMLHttpRequest()
+
+          XHR.onload = () => {
+            const DOCUMENTBODY = document.body
+
+            DOCUMENTBODY.innerHTML = XHR.response
+          }
+
+          XHR.open('POST', `${window.location.origin}/survey`)
+          XHR.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+          XHR.send(`identifier=${LOCALSTORAGEIDENTIFIER}&surveycontinue=true`)
+        }
+      }
+
+    }
+  }
+
+  function checkIdentifier() {
+    return ( document.getElementById('identifier-setter') !== null ) ? document.getElementById('identifier-setter').value : undefined
+  }
+  ```
+
+</details>
+
 ## Prerequisites
 * Nodejs
 * Npm
