@@ -87,8 +87,14 @@ In de usable layer is de css toegevoegd en is het 10x makkelijker om de applicat
 <details>
   <summary>Bekijk code snipets</summary>
 
-  ```
+  Voor dit project heb ik ervoor gekozen om hele simpele css te schrijven zodat de styling voor elke browser ondersteund wordt, ik heb dus niet gebruik gemaakt
+  van bijvoorbeeld een display grid of flex oplossing om mijn layout te maken. Wel heb ik gebruik gemaakt van css variabelen voor mijn kleuren.
+  Dit wordt niet door elke browser ondersteund en heb ik op de onderstaande manier ervoor gezorgt dat wel de kleur getoond wordt, dit is mogelijk door het cascading effect van css.
+  Eerst wordt de hex kleur toegevoegd aan het element en daarna wordt wanneer de css variabelen ondersteund zijn door de browser de variabele kleur toegevoegd.
 
+  ```css
+  background: #476793;
+  background: var(--primary-color)
   ```
 
 </details>
