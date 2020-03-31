@@ -311,8 +311,7 @@ Tijdens het testen van de keyboard navigatie in firefox kwam ik er al snel achte
 weigerd firefox om anchor tags te targeten. Na het zoeken op internet naar een oplossing kwam ik er al snel achter dat dit een MAC operating system probleem is en dit dus niet aan de hand van code opgelost
 kan worden.
 
-Stackoverflow accepted answer
-
+Stackoverflow accepted answer:
 **Ok, somebody explained this to me. It's a Mac problem. Mozilla is being true to operating system settings in Mac OS.**
 
 **There are two distinct ways around this on the user side. Both seem to work:**
