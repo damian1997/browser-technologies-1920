@@ -402,7 +402,7 @@ zelf zijn unieke code moeten onthouden om door te kunnen gaan met zijn/haar surv
 Wanneer de gebruiker zijn localstorage uit zet zal hij de unieke code moeten onthouden om door te gaan met zijn/haar survey. De applicatie blijft gewoon werken.
 
 ## Conclusie
-Tijdens dit vak hebben we geleerd hoe en waarom een website voor elke gebruiker met elk device in alle contexten bruikbaar moet zijn. Dit heb ik gedaan door eerst
+Tijdens dit vak hebben we geleerd waarom een website voor elke gebruiker met elk device in alle contexten bruikbaar moet zijn en hoe je dit realiseerd. Dit heb ik gedaan door eerst
 zorgvuldig de core functionaliteit in kaart te brengen en deze te bouwen. De core functionaliteit is hoe dan ook en voor iedereen toegankelijk.
 Na de core functionaliteit gebouwd te hebben en dus een goede fundering te hebben voor mn applicatie ging ik aan de slag met het verbeteren van de user experience.
 Dit heb ik gedaan in lagen, en ik begon met het schrijven van css om de layout goed in elkaar te krijgen en belangrijke elementen te benadrukken doormiddel van grote en kleur.
