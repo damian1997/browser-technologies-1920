@@ -83,6 +83,16 @@ In de usable layer is de css toegevoegd en is het 10x makkelijker om de applicat
   <img src="./github/videos/usable-layer.gif">
 </details>
 
+### Code snippets voor het schrijven van css falbacks
+<details>
+  <summary>Bekijk code snipets</summary>
+
+  ```
+
+  ```
+
+</details>
+
 ## Pleasurable layer
 In de pleasurable layer heb ik met javascript op de client ervoor gezorgd dat de browser niet bij form submit een refresh hoeft te doen. Ik handel nu de POST af in de client en doe dit doormiddel van AJAX XMLHttpRequest.
 Door dit te doen kan ik de content doormiddel van een animatie het beeld in en uit laten faden en zorgt dit voor een meer plezierige ervaring voor de gebruiker.
@@ -91,7 +101,7 @@ Door dit te doen kan ik de content doormiddel van een animatie het beeld in en u
   <img src="./github/videos/pleasurable-layer.gif">
 </details>
 
-Code snippets voor afhandelen XMLHttpRequest
+### Code snippets voor afhandelen XMLHttpRequest
 <details>
   <summary>Bekijk code snippets</summary>
 
