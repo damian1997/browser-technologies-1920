@@ -198,7 +198,7 @@ Door dit te doen kan ik de content doormiddel van een animatie het beeld in en u
 
 </details>
 
-### Code snippets voor het automatisch doorgaan met surver
+### Code snippets voor het automatisch doorgaan met survey
 <details>
   <summary>Bekijk code snippets</summary>
 
