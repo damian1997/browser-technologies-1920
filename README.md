@@ -346,29 +346,34 @@ TODO IE TESTING RESULTS
 
 
 ## Feature testing
-**Afbeeldingen uitzetten**
+### Afbeeldingen uitzetten
+
 Er wordt geen gebruik gemaakt van afbeeldingen in dit project.
 
-**Custom fonts uitzetten**
+### Custom fonts uitzetten
+
 Wanneer een custom font niet ingeladen kan worden wordt een standaard font ingezet die ingebakken zit in de browser.
 
-**Muis of trackpad werkt niet**
+### Muis of trackpad werkt niet
+
 De gebruiker kan door de applicatie heen navigeren doormiddel van tabs, er wordt in de css doormiddel van :focus aan de gebruiker duidelijkheid gegeven
 waar hij met zijn tabs op target.
 
-**Breedband internet uitzetten**
+### Breedband internet uitzetten
+
 Wanneer ik via de inspector mijn netwerk throttle en de snelheid van slow 3g naboots werkt de website zoals verwacht alleen een
 iets slomer. De werking van de applicatie wordt niet bezienswaardig aangetast.
 
-**Javascript uitzetten**
+### Javascript uitzetten
+
 Wanneer de gebruiker zijn javascript uitzet werkt de applicatie nogsteeds, nu wordt alle logica op de server afgehandeld en is de applicatie nog steeds
 te gebruiken. De ervaring wordt echter wel slechter aangezien er niet met fancy transities gewerkt kan worden.
 
-**Cookies uitzetten**
+### Cookies uitzetten
 Wanneer de gebruiker zijn cookies uit zet kan hij alsnog de applicatie gebruiken. De localstorage functionaliteit wertk dan echter niet meer en zal de gebruiker
 zelf zijn unieke code moeten onthouden om door te kunnen gaan met zijn/haar survey.
 
-**Localstorage uitzetten**
+### Localstorage uitzetten
 Wanneer de gebruiker zijn localstorage uit zet zal hij de unieke code moeten onthouden om door te gaan met zijn/haar survey. De applicatie blijft gewoon werken.
 
 ## Prerequisites
