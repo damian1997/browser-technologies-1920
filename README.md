@@ -12,6 +12,7 @@ Repository for the browser technologies course.
 * [Pleasurabel layer](#pleasurable-layer)
 * [Browser testing](#browser-testing)
 * [Feature testing](#feature-testing)
+* [Conclusie](#conslusie)
 * [Prerequisites](#prerequisites)
 * [Installing](#installing)
 
@@ -399,6 +400,17 @@ zelf zijn unieke code moeten onthouden om door te kunnen gaan met zijn/haar surv
 
 ### Localstorage uitzetten
 Wanneer de gebruiker zijn localstorage uit zet zal hij de unieke code moeten onthouden om door te gaan met zijn/haar survey. De applicatie blijft gewoon werken.
+
+## Conclusie
+Tijdens dit vak hebben we geleerd hoe en waarom een website voor elke gebruiker met elk device in alle contexten bruikbaar moet zijn. Dit heb ik gedaan door eerst
+zorgvuldig de core functionaliteit in kaart te brengen en deze te bouwen. De core functionaliteit is hoe dan ook en voor iedereen toegankelijk.
+Na de core functionaliteit gebouwd te hebben en dus een goede fundering te hebben voor mn applicatie ging ik aan de slag met het verbeteren van de user experience.
+Dit heb ik gedaan in lagen, en ik begon met het schrijven van css om de layout goed in elkaar te krijgen en belangrijke elementen te benadrukken doormiddel van grote en kleur.
+Nadat ik mijn css klaar had ben ik aan de slag gegaan met het schrijven van clientside javascript om de ervaring een stuk smoother te maken. Het is belangrijk om continu te checken
+of de functionaliteiten die je schrijft ook ondersteund worden, wanneer dit niet het geval is moet hier een fallback voor gegeven worden zodat de applicatie niet breekt maar blijft draaien.
+Dit doe je door feature detection toe te passen, dit moet in css en in je javascript.
+
+Tijdens dit vak heb ik veel geleerd over hoe je een applicatie toegankelijk houdt voor iedereen en moet beginnen met een sterke fundering bouwen en vanuit daar je applicatie meer nuance te geven.
 
 ## Prerequisites
 * Nodejs
