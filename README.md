@@ -369,6 +369,11 @@ Er wordt geen gebruik gemaakt van afbeeldingen in dit project.
 
 Wanneer een custom font niet ingeladen kan worden wordt een standaard font ingezet die ingebakken zit in de browser.
 
+### Colors
+
+De kleuren die ik gebruikt hebben goed contrast tot elkaar en belangrijke elementen worden gehighlight met een velle kleur.
+<img src="./github/images/color-ratio.png">
+
 ### Muis of trackpad werkt niet
 
 De gebruiker kan door de applicatie heen navigeren doormiddel van tabs, er wordt in de css doormiddel van :focus aan de gebruiker duidelijkheid gegeven
