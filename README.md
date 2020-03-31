@@ -330,7 +330,16 @@ In firefox werkt al mn styling zoals verwacht het enige wat anders is is de mani
 #### Clientside javascript
 In firefox heb ik de clientside javascript getest en heb niks kunnen vinden wat ervoor zorgde dat de applicatie niet werkt zoals verwacht.
 
-### IE
+### Safari
+
+#### Keyboard navigatie
+Werkt zoals verwacht.
+
+#### Styling
+Werkt ook zoals verwacht, geen rare dingen gezien.
+
+#### Clientside javascript
+Werkt ook zoals verwacht.
 
 ## Prerequisites
 * Nodejs
