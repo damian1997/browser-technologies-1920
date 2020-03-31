@@ -6,6 +6,10 @@ Repository for the browser technologies course.
 * [Description](#description)
 * [Todo](#todo)
 * [Wireframes](#wireframes)
+* [Functional layer](#functional-layer)
+* [Usable layer](#usable-layer)
+* [Pleasurabel layer](#pleasurable-layer)
+* [Browser testing](#browser-testing)
 * [Prerequisites](#prerequisites)
 * [Installing](#installing)
 
@@ -288,6 +292,44 @@ Door dit te doen kan ik de content doormiddel van een animatie het beeld in en u
   ```
 
 </details>
+
+## Browser testing
+
+Dingen die ik getest heb:
+* Keyboard navigatie door de website heen
+* Styling
+* Clientside javascript functionaliteit
+
+### Chrome
+Mijn standaard browser is Chrome, deze browser gebruik ik voor dagelijks browsing en development. Door deze reden is de website automatisch geoptimaliseerd voor chrome
+en kan ik geen rare dingen of fouten vinden in deze browser.
+
+### Firefox
+
+#### Keyboard navigatie
+Tijdens het testen van de keyboard navigatie in firefox kwam ik er al snel achter dat dit niet werkt zoals verwacht. Wanneer ik doormiddel van tab door de website heen probeer te navigeren
+weigerd firefox om anchor tags te targeten. Na het zoeken op internet naar een oplossing kwam ik er al snel achter dat dit een MAC operating system probleem is en dit dus niet aan de hand van code opgelost
+kan worden.
+
+Stackoverflow accepted answer
+
+```
+Ok, somebody explained this to me. It's a Mac problem. Mozilla is being true to operating system settings in Mac OS.
+
+There are two distinct ways around this on the user side. Both seem to work:
+
+In System Preferences → Keyboard, in the Shortcuts pane, check the “all controls” radio at the bottom.
+
+In Firefox, type "about:config" in the URL bar. There is no accessibility.tabfocus preference on the mac, so you'll have to make one. Right click in the window, create a new "integer" pref, and set it to 7.
+
+Neither of these are terribly obvious. Also, neither of these are a server-side solution for developers, which is frustrating.
+```
+
+Resource:
+[How to allow keyboard focus of links in firefox](https://stackoverflow.com/questions/11704828/how-to-allow-keyboard-focus-of-links-in-firefox/11713537)
+
+
+### IE
 
 ## Prerequisites
 * Nodejs
