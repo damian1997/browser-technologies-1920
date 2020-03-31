@@ -365,6 +365,8 @@ Wanneer de gebruiker zijn javascript uitzet werkt de applicatie nogsteeds, nu wo
 te gebruiken. De ervaring wordt echter wel slechter aangezien er niet met fancy transities gewerkt kan worden.
 
 **Cookies uitzetten**
+Wanneer de gebruiker zijn cookies uit zet kan hij alsnog de applicatie gebruiken. De localstorage functionaliteit wertk dan echter niet meer en zal de gebruiker
+zelf zijn unieke code moeten onthouden om door te kunnen gaan met zijn/haar survey.
 
 ## Prerequisites
 * Nodejs
