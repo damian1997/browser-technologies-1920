@@ -368,6 +368,9 @@ te gebruiken. De ervaring wordt echter wel slechter aangezien er niet met fancy 
 Wanneer de gebruiker zijn cookies uit zet kan hij alsnog de applicatie gebruiken. De localstorage functionaliteit wertk dan echter niet meer en zal de gebruiker
 zelf zijn unieke code moeten onthouden om door te kunnen gaan met zijn/haar survey.
 
+**Localstorage uitzetten**
+Wanneer de gebruiker zijn localstorage uit zet zal hij de unieke code moeten onthouden om door te gaan met zijn/haar survey. De applicatie blijft gewoon werken.
+
 ## Prerequisites
 * Nodejs
 * Npm
