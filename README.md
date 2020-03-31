@@ -87,6 +87,7 @@ In de usable layer is de css toegevoegd en is het 10x makkelijker om de applicat
 <details>
   <summary>Bekijk code snipets</summary>
 
+#### Uitleg fallback voor kleuren
   Voor dit project heb ik ervoor gekozen om hele simpele css te schrijven zodat de styling voor elke browser ondersteund wordt, ik heb dus niet gebruik gemaakt
   van bijvoorbeeld een display grid of flex oplossing om mijn layout te maken. Wel heb ik gebruik gemaakt van css variabelen voor mijn kleuren.
   Dit wordt niet door elke browser ondersteund en heb ik op de onderstaande manier ervoor gezorgt dat wel de kleur getoond wordt, dit is mogelijk door het cascading effect van css.
@@ -98,6 +99,39 @@ In de usable layer is de css toegevoegd en is het 10x makkelijker om de applicat
   ```
 
 #### Uitleg supports and supports not
+  Omdat ik voor dit project niet gebruik heb gemaakt van nieuwe minder goed ondersteunde css technieken leg ik hier een stuk uit over hoe ik dit wel afgevangen zou hebben wanneer ik wel voor een display grid gekozen zou hebben.
+  Door gebruik te maken van de @supports en @supports not kan je op een makkelijke manier detecteren of een browser wel of niet een feature support. Hiermee kan je dus fallbacks schrijven voor bijvoorbeeld een display grid of display flex.
+  Dit doe je op de volgende manier.
+
+  ```css
+  @supports (display: grid) {
+  #form-watcher {
+    display: grid;
+    /* Layout styling here when grid is supported */
+    }
+  }
+
+  @supports not (display: grid) {
+  #form-watcher {
+    display: inline-block;
+    /* Fallback layout styling here when grid is not supported */
+    }
+  }
+  ```
+
+  In scss is het nog makkelijker om een supports te schrijven omdat je in scss kan nesten en dus de code bij elkaar houdt en niet meer ergens onderaan je document de supports te schrijven.
+  Dit is voor de leesbaarheid van je code stukken beter in mijn mening.
+
+  ```scss
+  #form-watcher {
+    /* Standard layout styling that is supported by every browser goed here */
+
+    @supports (display: grid) {
+      display: grid;
+      /* Layout styling here when gris is supported */
+    }
+  }
+  ```
 
 
 </details>
@@ -213,6 +247,7 @@ Door dit te doen kan ik de content doormiddel van een animatie het beeld in en u
 <details>
   <summary>Bekijk code snippets</summary>
 
+#### Uitleg localstorage
   In onderstaande code check ik of de identifier-setter aanwezig is op de pagina wanneer dit het geval is return ik de unieke code en sla ik
   deze op in local storage wanneer localstorage aanwezig is. Wanneer het element identifier-setter niet aanwezig is in de DOM check ik of het pad
   in de url continue-survey bevat, wanneer dit het geval is haal ik uit de localstorage de identifier op en stuur ik een xhr request naar de server om
