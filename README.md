@@ -97,6 +97,9 @@ In de usable layer is de css toegevoegd en is het 10x makkelijker om de applicat
   background: var(--primary-color)
   ```
 
+#### Uitleg supports and supports not
+
+
 </details>
 
 ## Pleasurable layer
