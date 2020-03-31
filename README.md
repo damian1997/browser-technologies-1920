@@ -94,6 +94,7 @@ Door dit te doen kan ik de content doormiddel van een animatie het beeld in en u
 Code snippets voor afhandelen XMLHttpRequest
 <details>
   <summary>Bekijk code snippet</summary>
+
   ```javascript
   const SURVEYFORM = document.querySelectorAll('form[name="survey"]')
   if(SURVEYFORM) {
@@ -156,6 +157,7 @@ Code snippets voor afhandelen XMLHttpRequest
     })
   }
   ```
+
 </details>
 
 ## Prerequisites
