@@ -324,7 +324,11 @@ kan worden.
   [How to allow keyboard focus of links in firefox](https://stackoverflow.com/questions/11704828/how-to-allow-keyboard-focus-of-links-in-firefox/11713537)
 </details>
 
+#### Styling
+In firefox werkt al mn styling zoals verwacht het enige wat anders is is de manier hoe firefox de kleuren verwerkt, de kleuren zijn in firefox een stuk feller.
 
+#### Clientside javascript
+In firefox heb ik de clientside javascript getest en heb niks kunnen vinden wat ervoor zorgde dat de applicatie niet werkt zoals verwacht.
 
 ### IE
 
