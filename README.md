@@ -93,7 +93,11 @@ Door dit te doen kan ik de content doormiddel van een animatie het beeld in en u
 
 Code snippets voor afhandelen XMLHttpRequest
 <details>
-  <summary>Bekijk code snippet</summary>
+  <summary>Bekijk code snippets</summary>
+
+  In dit stuk code selecteer ik alle formulieren die in het document staan, vervolgens kijk ik of er formulieren zijn en ga ik voor elk formulier de
+  input fields en hun value's ophalen. Vervolgens push ik in FORMDATA de name van de node en de value die de node heeft, dit heb ik nodig on een query string te sturen
+  naar de server. Vervolgens doe ik een feature detection op  XHR en stuur ik de query string naar mijn server en insert ik de html response in mijn form container.
 
   ```javascript
   const SURVEYFORM = document.querySelectorAll('form[name="survey"]')
